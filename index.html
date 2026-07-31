@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self';
+script-src 'self' 'unsafe-inline';
+style-src 'self' 'unsafe-inline';
+img-src 'self' data:;
+font-src 'self';
+connect-src 'none';
+object-src 'none';
+media-src 'none';
+frame-src 'none';
+worker-src 'none';
+manifest-src 'none';
+base-uri 'none';
+form-action 'none';
+frame-ancestors 'none';
+upgrade-insecure-requests;
+block-all-mixed-content;
+">
+<title>JSON Formatter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>JSON Formatter</h1>
+<p>100% Local • No network requests • No data leaves your browser</p>
+
+<div id="status" class="status topstatus"></div>
+
+<div class="toolbar">
+<button onclick="formatJson()">Pretty</button>
+<button onclick="minifyJson()">Minify</button>
+<button onclick="validateJson()">Validate</button>
+<button onclick="copyOutput()">Copy</button>
+<button onclick="downloadJson()">Download</button>
+<button class="danger" onclick="clearAll()">Clear</button>
+<button onclick="document.getElementById('file').click()">Open JSON</button>
+<input id="file" type="file" hidden accept=".json,.txt,application/json">
+</div>
+
+<div class="editor">
+<div class="panel">
+<div class="title">Input</div>
+<textarea id="input" spellcheck="false" placeholder="Paste JSON here..."></textarea>
+</div>
+<div class="panel">
+<div class="title">Output</div>
+<pre id="output"></pre>
+</div>
+</div>
+
+<div id="status" class="status"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
