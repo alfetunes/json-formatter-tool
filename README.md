@@ -4,6 +4,8 @@ A lightweight, privacy-focused JSON formatting tool that runs entirely in the br
 
 No data is sent to external servers, making it suitable for working with sensitive JSON files in secure environments.
 
+https://formatterjson.netlify.app/
+
 ## Features
 
 - ✅ Pretty print JSON
